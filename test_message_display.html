@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Message Display</title>
+    <style>
+        .test-message-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-family: 'Arial', sans-serif;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .test-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .unique-id {
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+        
+        .timestamp {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+        
+        .refresh-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            margin-top: 8px;
+        }
+        
+        .refresh-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-message-container">
+        <div class="test-title">🧪 Test Message</div>
+        <div class="unique-id" id="unique-id">Loading...</div>
+        <div class="timestamp" id="timestamp">Initializing...</div>
+        <button class="refresh-btn" onclick="generateNewId()">🔄 New ID</button>
+    </div>
+
+    <script>
+        function generateUniqueId() {
+            // Generate timestamp-based ID with random component
+            const timestamp = Date.now();
+            const randomPart = Math.floor(Math.random() * 999999).toString().padStart(6, '0');
+            return `TEST-${timestamp}-${randomPart}`;
+        }
+
+        function updateDisplay() {
+            const uniqueId = generateUniqueId();
+            const now = new Date();
+            
+            document.getElementById('unique-id').textContent = uniqueId;
+            document.getElementById('timestamp').textContent = 
+                `Generated: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+        }
+
+        function generateNewId() {
+            updateDisplay();
+        }
+
+        // Initialize on load
+        updateDisplay();
+
+        // Auto-refresh every 30 seconds
+        setInterval(updateDisplay, 30000);
+        
+        console.log('🎉 Test Message Display initialized successfully!');
+    </script>
+</body>
+</html>
