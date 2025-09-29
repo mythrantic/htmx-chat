@@ -41,11 +41,11 @@
             file is all there is to it.</p>
         <p class="text-lg mb-1">The chat messages are sent and received using htmx and stored in a Pocketbase
             collection. The chat messages are rendered using Nunjucks templates.</p>
-          <h6 class="text-xl font-bold mb-4">When it comes to realtime. the simplest i know is <a href="https://gun-chat.valiantlynx.com" target="_blank" class="link link-primary text-6xl">gunDB</a></h6>
+          <h6 class="text-xl font-bold mb-4">When it comes to realtime. the simplest i know is <a href="https://gun-chat.valiantlynx.com" target="_blank" class="link link-primary text-7xl">gunDB</a></h6>
 
 
         <!-- Chat Form -->
-        <div class="bg-base-300 rounded-lg p-4 shadow-md w-full sm:w-2/3" hx-ext="client-side-templates">
+        <div class="rounded-lg p-4 shadow-md w-full sm:w-2/3" hx-ext="client-side-templates">
             <form id="chat-form" hx-post="https://pb.valiantlynx.com/api/collections/chat_htmx/records" hx-swap="none" hx-encoding="multipart/form-data" hx-on::after-request="if(event.detail.successful) { document.getElementById('message-input').value = ''; htmx.trigger('#chat-container', 'refreshChat'); }">
                 <div class="flex flex-wrap">
                     <input type="text" name="message" id="message-input" placeholder="Type your message" class="flex-grow input px-2 py-1 border rounded-l-lg" minlength="2">
