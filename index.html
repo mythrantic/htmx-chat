@@ -12,7 +12,70 @@
     <!-- Include SSE extension for real-time updates -->
     <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
 
-<link rel="stylesheet" href="css/styles.css">
+<style>
+/* Layout utilities */
+.min-h-screen{min-height:100vh}
+.flex{display:flex}
+.flex-col{flex-direction:column}
+.flex-wrap{flex-wrap:wrap}
+.justify-center{justify-content:center}
+.items-center{align-items:center}
+.flex-grow{flex:1 1 auto}
+.w-full{width:100%}
+.sm\:w-2\/3{width:66.666667%}
+/* Spacing utilities */
+.p-4{padding:1rem}
+.m-4{margin:1rem}
+.mb-4{margin-bottom:1rem}
+.mb-8{margin-bottom:2rem}
+.mt-4{margin-top:1rem}
+.py-1{padding-top:.25rem;padding-bottom:.25rem}
+.py-2{padding-top:.5rem;padding-bottom:.5rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.px-2{padding-left:.5rem;padding-right:.5rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.w-10{width:2.5rem}
+/* Typography */
+.text-3xl{font-size:1.875rem}
+.text-6xl{font-size:4rem}
+.text-7xl{font-size:4.5rem}
+.text-xl{font-size:1.25rem}
+.text-lg{font-size:1.125rem}
+.font-bold{font-weight:700}
+/* Text colors */
+.text-transparent{color:transparent}
+/* Background utilities */
+.bg-gradient-to-r{background-image:linear-gradient(to right,#14B8C9,#0F766E,#0B5F6B)}
+.bg-clip-text{background-clip:text;-webkit-background-clip:text}
+/* Border utilities */
+.border{border:1px solid #e5e7eb}
+.rounded-l-lg{border-top-left-radius:.5rem;border-bottom-left-radius:.5rem}
+.rounded-r-lg{border-top-right-radius:.5rem;border-bottom-right-radius:.5rem}
+.rounded-lg{border-radius:.5rem}
+.rounded-full{border-radius:9999px}
+/* Shadow */
+.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -1px rgba(0,0,0,.05)}
+/* Button */
+.btn{background:#0f766e;color:#fff;border:none;cursor:pointer;font-weight:600}
+.border-secondary{border-color:#0f766e}
+/* Input */
+.input{border:1px solid #e5e7eb;background:#fff;padding:.25rem .5rem;border-radius:.5rem;width:100%;}
+.invisible{visibility:hidden}
+/* Chat component */
+.chat{display:flex;flex-direction:column;margin-bottom:.5rem}
+.chat-start{align-items:flex-start}
+.avatar{margin-right: .5rem}
+.chat-header{font-weight:600;margin-bottom:.25rem}
+.chat-bubble{background:#f1f1f1;padding:.5rem;border-radius:.5rem}
+.chat-footer{font-size:.75rem;color:rgba(0,0,0,.6)}
+/* Link utilities */
+.link{color:#0f766e;text-decoration:underline}
+.link-primary{text-decoration:underline}
+/* Media queries */
+@media (min-width:640px){.sm\:w-2\/3{width:66.666667%}}
+/* Icon color inheritance */
+svg{fill:currentColor}
+</style>
 </head>
 <body>
     <div class="min-h-screen flex flex-col justify-center items-center">
