@@ -15,10 +15,10 @@
 <style>body{background:url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg') repeat center center;background-size:auto;color:#f0f0f0;}h1{background-color:#0d9488;}</style>
 </head>
 <body>
-    <div class="min-h-screen flex flex-col justify-center items-center">
+    <div class="min-h-screen flex flex-col justify-center items-center bg-slate-900 text-gray-100">
           <!-- New Section for Icons -->
-          <div class="flex justify-center ga
-            <a href="https://github.com/valiantlynx/htmx-chat" target="_blank" class="text-6xl">
+          <div class="flex justify-center space-x-4 rounded-full shadow-xl backdrop-blur-2xl bg-white/20 p-4">
+            <a href="https://github.com/valiantlynx/htmx-chat" target="_blank" class="text-6xl bg-white/20 rounded-full shadow-md p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                     <g fill-rule="evenodd" clip-rule="evenodd">
                         <path
@@ -28,7 +28,7 @@
                     </g>
                 </svg>
             </a>
-            <a href="https://www.valiantlynx.com" target="_blank" class="text-6xl">
+            <a href="https://www.valiantlynx.com" target="_blank" class="text-6xl bg-white/20 rounded-full shadow-md p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 2048 2048">
                     <path fill="currentColor"
                         d="M1024 0q141 0 272 36t245 103t207 160t160 208t103 245t37 272q0 141-36 272t-103 245t-160 207t-208 160t-245 103t-272 37q-141 0-272-36t-245-103t-207-160t-160-208t-103-244t-37-273q0-141 36-272t103-245t160-207t208-160T751 37t273-37m0 1920q123 0 237-32t214-90t182-141t140-181t91-214t32-238q0-123-32-237t-90-214t-141-182t-181-140t-214-91t-238-32q-123 0-237 32t-214 90t-182 141t-140 181t-91 214t-32 238q0 123 32 237t90 214t141 182t181 140t214 91t238 32m597-880l48-144h75l-85 256h-75l-48-144l-48 144h-75l-85-256h75l48 144l48-144h74zm-464-144h75l-85 256h-75l-48-144l-48 144h-75l-85-256h75l48 144l48-144h74l48 144zm-512 0h75l-85 256h-75l-48-144l-48 144h-75l-85-256h75l48 144l48-144h74l48 144z" />
@@ -37,22 +37,23 @@
 
 
         </div>
-        <h1 class="text-3xl font-bold mb-8 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-transparent bg-clip-text">Pocketbase X Python Chat</h1>
-        <h2 class="text-2xl font-semibold mb-4">Bot Mythrantic</h2>
-        <h3 class="text-xl font-bold mb-4">Powered by htmx and Pocketbase.</h3>
-        <p class="text-lg mb-1">This is a simple chat app that uses htmx to send and receive messages. This one html
+        </div>
+<h1 class="text-3xl font-bold mb-8 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 text-transparent bg-clip-text">Pocketbase X Python Chat</h1>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-300">Bot Mythrantic</h2>
+        <h3 class="text-xl font-bold mb-4 text-gray-300">Powered by htmx and Pocketbase.</h3>
+        <p class="text-lg mb-1 text-gray-300">This is a simple chat app that uses htmx to send and receive messages. This one html
             file is all there is to it.</p>
-        <p class="text-lg mb-1">The chat messages are sent and received using htmx and stored in a Pocketbase
+        <p class="text-lg mb-1 text-gray-300">The chat messages are sent and received using htmx and stored in a Pocketbase
             collection. The chat messages are rendered using Nunjucks templates.</p>
-          <h6 class="text-xl font-bold mb-4">When it comes to realtime. the simplest i know is <a href="https://gun-chat.valiantlynx.com" target="_blank" class="link link-primary text-7xl">gunDB</a></h6>
+          <h6 class="text-xl font-bold mb-4">When it comes to realtime. the simplest i know is <a href="https://gun-chat.valiantlynx.com" target="_blank" class="link link-primary text-7xl text-gray-300 hover:text-gray-200">gunDB</a></h6>
 
 
         <!-- Chat Form -->
-        <div class="rounded-lg p-4 shadow-md w-full sm:w-2/3" hx-ext="client-side-templates">
+        <div class="rounded-2xl p-6 shadow-xl bg-slate-800/70 backdrop-blur-sm w-full sm:w-2/3" hx-ext="client-side-templates">
             <form id="chat-form" hx-post="https://pb.valiantlynx.com/api/collections/chat_htmx/records" hx-swap="none" hx-encoding="multipart/form-data" hx-on::after-request="if(event.detail.successful) { document.getElementById('message-input').value = ''; htmx.trigger('#chat-container', 'refreshChat'); }">
                 <div class="flex flex-wrap">
-                    <input type="text" name="message" id="message-input" placeholder="Type your message" class="flex-grow input px-2 py-1 border rounded-l-lg" minlength="2">
-                    <button type="submit" class="px-4 py-2 btn rounded-r-lg border border-secondary">Send</button>
+                    <input type="text" name="message" id="message-input" placeholder="Type your message" class="flex-grow input px-2 py-1 border rounded-l-lg shadow-inner" minlength="2">
+                    <button type="submit" class="px-4 py-2 btn rounded-r-lg border border-secondary shadow-xl">Send</button>
                 </div>
             </form>
 
